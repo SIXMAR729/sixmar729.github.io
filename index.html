@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--=============== FAVICON ===============-->
+    <link rel="shortcut icon" href="assets/img/Primer-t.ico" type="image/x-icon">
+
+    <!--=============== REMIXICONS ===============-->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+
+    <!--=============== CSS ===============-->
+    <link rel="stylesheet" href="assets/css/styles.css">
+
+    <!-- Sweet Alert CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <title>Primer_artx</title>
+</head>
+
+<body>
+    <!--==================== HEADER ====================-->
+    <header class="header" id="header">
+        <nav class="nav container">
+            <a href="#" class="nav_logo">
+                <img src="assets/img/Primer-t.ico" alt="logo image">
+                PRIMER_ARTX
+            </a>
+
+            <div class="nav_menu" id="nav-menu">
+                <ul class="nav_list">
+                    <li class="nav_item">
+                        <a href="#home" class="nav_link active-link">Home</a>
+                    </li>
+                    <li class="nav_item">
+                        <a href="#about" class="nav_link">About Me</a>
+                    </li>
+                    <li class="nav_item">
+                        <a href="#popular" class="nav_link">Popular</a>
+                    </li>
+                    <li class="nav_item">
+                        <a href="#recently" class="nav_link">Recently</a>
+                    </li>
+                </ul>
+
+                <!-- close button -->
+                <div class="nav_close" id="nav-close">
+                    <i class="ri-close-line"></i>
+                </div>
+
+                <img src="assets/img/CK-1.PNG" alt="nav image" class="nav_img-1">
+                <img src="assets/img/img_showcase_1.png" alt="nav image" class="nav_img-2">
+            </div>
+
+            <div class="nav_buttons">
+                <!-- Theme change button -->
+                <i class="ri-moon-line change-theme" id="theme-button"></i>
+
+                <!-- Toggle button -->
+                <div class="nav_toggle" id="nav-toggle">
+                    <i class="ri-apps-2-line"></i>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!--==================== MAIN ====================-->
+    <main class="main">
+        <!--==================== HOME ====================-->
+        <section class="home section" id="home">
+            <div class="home_container container grid">
+                <img src="assets/img/img_2.png" alt="Main_menu" class="home_img">
+
+                <div class="home_data">
+                    <h1 class="home_title">
+                        My Profile
+
+                        <div>
+                            <img src="assets/img/CK-1.png" alt="home image">
+                            Website
+                        </div>
+                    </h1>
+
+                    <p class="home_description">
+                        "Enjoy a good time with my website in my world."
+                    </p>
+
+                    <a href="#" class="button">
+                        Order Now <i class="ri-arrow-right-line"></i>
+                    </a>
+                </div>
+            </div>
+
+            <img src="assets/img/CK-1.png" alt="home image" class="home_leaf-1">
+            <img src="assets/img/ND-1.PNG" alt="home image" class="home_leaf-2">
+        </section>
+
+        <!--==================== ABOUT ====================-->
+        <section class="about section" id="about">
+            <div class="about_container container grid">
+                <div class="about_data">
+                    <span class="section_subtitle">About Me</span>
+                    <h2 class="section_title about_title">
+                        <div>
+                            I Create
+                            <img src="assets/img/Primer.PNG" alt="about image">
+                        </div>
+                        Small Website/Landing Page
+                    </h2>
+
+                    <p class="about_description">
+
+                        Creating a website involves designing a user-friendly interface with compelling content,
+                        optimized for mobile and search engines. E-commerce, blogging, customization, and seamless
+                        browsing are key. Hosting, domain management, and backend/frontend technologies ensure
+                        accessibility and functionality.
+                    </p>
+                </div>
+                <img src="assets/img/img_1.jpg" alt="about image" class="about_img">
+            </div>
+            <img src="assets/img/leaf-branch-1.png" alt="about image" class="about_leaf">
+        </section>
+
+        <!--==================== POPULAR ====================-->
+        <section class="popular section" id="popular">
+            <span class="section_subtitle">My Ai Image</span>
+            <h2 class="section_title">Pictures</h2>
+
+            <div class="popular_container container grid">
+                <article class="popular_card">
+                    <img src="assets/img/img_showcase_2.png" alt="Alex image" class="popular_img">
+
+                    <h3 class="popular_name">Single Page</h3>
+                    <span class="popular_description">- days</span>
+
+                    <span class="popular_price"> - ฿</span>
+
+                    <button class="popular_button" onclick="_sAlert()">
+                        <i class="ri-shopping-bag-line"></i>
+                    </button>
+                </article>
+                <article class="popular_card">
+                    <img src="assets/img/img_showcase_4.png" alt="Eiei image" class="popular_img">
+
+                    <h3 class="popular_name">Website</h3>
+                    <span class="popular_description">- days</span>
+
+                    <span class="popular_price">-฿</span>
+
+                    <button class="popular_button" onclick="_sAlert()">
+                        <i class="ri-shopping-bag-line"></i>
+                    </button>
+                </article>
+                <article class="popular_card">
+                    <img src="assets/img/img_showcase_5.png" alt="popular image" class="popular_img">
+
+                    <h3 class="popular_name">Web application</h3>
+                    <span class="popular_description">- days</span>
+
+                    <span class="popular_price">-฿</span>
+
+                    <button class="popular_button" onclick="_sAlert()">
+                        <i class="ri-shopping-bag-line"></i>
+                    </button>
+                </article>
+
+            </div>
+            <a href="#" class="button popular_more">
+                See More <i class="ri-arrow-right-line"></i>
+            </a>
+        </section>
+
+        <!--==================== RECENTLY ====================-->
+        <section class="recently section" id="recently">
+            <div class="recently_container container grid">
+                <div class="recently_data">
+                    <span class="section_subtitle">Recently Added</span>
+                    <h2 class="section_title">Recently’s Special <br>
+                        image
+                        <img src="assets/img/berries.png" alt="recently image">
+                    </h2>
+                    <p class="recently_description">
+                        Take a look at what's new. And do not deprive
+                        yourself of a good food, enjoy and be happy.
+                    </p>
+
+                    <a href="#" class="button">
+                        Order Now <i class="ri-arrow-right-line"></i>
+                    </a>
+
+                </div>
+
+                <img src="assets/img/recently-img-3.png" alt="recently image" class="recently_img">
+            </div>
+            <img src="assets/img/leaf-branch-2.png" alt="recently image" class="recently_leaf-1">
+            <img src="assets/img/leaf-branch-3.png" alt="recently image" class="recently_leaf-2">
+        </section>
+
+        <!--==================== NEWSLETTER ====================-->
+        <section class="newsletter section">
+            <div class="newsletter_container container">
+                <div class="newsletter_content grid">
+                    <img src="assets/img/newsletter-img-1.png" alt="newsletter image" class="newsletter_img">
+                    <div class="newsletter_data">
+                        <span class="section_subtitle">Newsletter</span>
+                        <h2 class="section_title">
+                            Subscribe For <br>
+                            Offer Updates
+                        </h2>
+                        <form action="" class="newsletter_form" id="newsletter_form">
+                            <input type="email" placeholder="Enter email" class="newsletter_input"
+                                id="newsletter_input">
+                            <button class="button newsletter_button" type="submit">
+                                Subscribe <i class="ri-send-plane-line"></i>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!--==================== FOOTER ====================-->
+    <footer class="footer">
+        <div class="footer_container container grid">
+            <div>
+                <a href="#" class="footer_logo">
+                    <img src="assets/img/ND-1.png" alt="logo image">
+                    Website
+                </a>
+
+                <p class="footer_description">
+                    Designing and developing <br>
+                    User-friendly interface <br>
+                    Support SEO
+                </p>
+            </div>
+            <div class="footer_content">
+                <div>
+                    <h3 class="footer_title">Main Menu</h3>
+
+                    <ul class="footer_links">
+                        <li>
+                            <a href="#" class="footer_link">About</a>
+                        </li>
+                        <li>
+                            <a href="#" class="footer_link">Menus</a>
+                        </li>
+                        <li>
+                            <a href="#" class="footer_link">Offer</a>
+                        </li>
+                        <li>
+                            <a href="#" class="footer_link">Events</a>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="footer_title">Tools/Framework</h3>
+
+                    <ul class="footer_links">
+                        <li>
+                            <a href="https://react.dev" class="footer_link">React</a><i class="ri-reactjs-fill"></i>
+                        </li>
+                        <li>
+                            <a href="https://nextjs.org" class="footer_link">Nextjs</a><i class="ri-reactjs-fill"></i>
+                        </li>
+                        <li>
+                            <a href="https://www.djangoproject.com" class="footer_link">Django</a>
+                        </li>
+                        <li>
+                            <a href="https://vuejs.org" class="footer_link">HTML</a><i class="ri-html5-line"></i>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="footer_title">Address</h3>
+
+                    <ul class="footer_links">
+                        <li class="footer_information">
+                            WFH (Work From Home) <br>
+                            Freelance
+                        </li>
+                        <li class="footer_information">
+                            4PM - 11PM
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="footer_title">Social Media</h3>
+
+                    <ul class="footer_social">
+                        <a href="https://www.facebook.com/" target="_blank" class="footer_social-link">
+                            <i class="ri-facebook-circle-fill"></i>
+                        </a>
+                        <a href="https://www.instagram.com/" target="_blank" class="footer_social-link">
+                            <i class="ri-instagram-fill"></i>
+                        </a>
+                        <a href="https://twitter.com/" target="_blank" class="footer_social-link">
+                            <i class="ri-twitter-fill"></i>
+                        </a>
+                    </ul>
+                </div>
+            </div>
+            <img src="assets/img/leaf-branch-4.png" alt="footer image" class="footer_leaf">
+        </div>
+        <div class="footer_info container">
+            <div class="footer_card">
+                <i class="ri-reactjs-fill"></i>
+                <i class="ri-html5-fill"></i>
+                <i class="ri-css3-fill"></i>
+                <i class="ri-javascript-fill"></i>
+            </div>
+
+            <span class="footer_copy">
+                &#169; Copyright PP. All rights reserved
+            </span>
+        </div>
+    </footer>
+
+    <!--========== SCROLL UP ==========-->
+    <a href="#" class="scrollup" id="scroll-up">
+        <i class="ri-arrow-up-line"></i>
+    </a>
+
+    <!--=============== SCROLLREVEAL ===============-->
+    <script src="assets/js/ScrollReveal.js"></script>
+
+    <!--=============== MAIN JS ===============-->
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>
