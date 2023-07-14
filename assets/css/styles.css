@@ -257,7 +257,7 @@ body.dark-theme {
   width: 50px;
   top: .75rem;
   left: -1rem;
-  transform: rotate(165deg);
+  transform: rotate(45deg);
 }
 
 .nav_img-2 {
@@ -343,7 +343,6 @@ body.dark-theme {
 
 .home_title img {
   width: 2rem;
-  transform: rotate(45deg);
 }
 
 .home_title div {
