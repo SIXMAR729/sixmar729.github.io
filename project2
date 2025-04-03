@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="en" class="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GRAND ÉCLAT | Luxury Hotel Experience</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+        @keyframes shimmer {
+            0% { background-position: -1000px 0; }
+            100% { background-position: 1000px 0; }
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .float-animation {
+            animation: float 6s ease-in-out infinite;
+        }
+        .shimmer-effect {
+            background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.3) 50%, rgba(255,255,255,0) 100%);
+            background-size: 200% 100%;
+            animation: shimmer 3s infinite linear;
+        }
+        .fade-in {
+            animation: fadeIn 1s ease-out forwards;
+        }
+        .theme-transition * {
+            transition: background-color 0.5s ease, color 0.3s ease, border-color 0.3s ease;
+        }
+        .gradient-text {
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+        .gold-border {
+            border: 1px solid rgba(212, 175, 55, 0.3);
+        }
+        .gold-border:hover {
+            border-color: rgba(212, 175, 55, 0.8);
+        }
+        .parallax {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    </style>
+</head>
+<body class="theme-transition min-h-screen bg-white text-gray-900 dark:bg-gray-900 dark:text-gray-100 font-serif">
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-white/80 dark:bg-gray-900/80 backdrop-blur-md shadow-sm">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <div class="w-10 h-10 rounded-full bg-gradient-to-br from-amber-500 to-amber-700 flex items-center justify-center">
+                    <i class="fas fa-hotel text-white text-xl"></i>
+                </div>
+                <span class="text-xl font-bold gradient-text bg-gradient-to-r from-amber-600 to-amber-800">GRAND ÉCLAT</span>
+            </div>
+            
+            <div class="hidden md:flex space-x-8">
+                <a href="#" class="hover:text-amber-600 dark:hover:text-amber-400 font-medium">Rooms & Suites</a>
+                <a href="#" class="hover:text-amber-600 dark:hover:text-amber-400 font-medium">Dining</a>
+                <a href="#" class="hover:text-amber-600 dark:hover:text-amber-400 font-medium">Spa</a>
+                <a href="#" class="hover:text-amber-600 dark:hover:text-amber-400 font-medium">Experiences</a>
+                <a href="#" class="hover:text-amber-600 dark:hover:text-amber-400 font-medium">Gallery</a>
+            </div>
+            
+            <div class="flex items-center space-x-4">
+                <button id="theme-toggle" class="w-10 h-10 rounded-full flex items-center justify-center bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700">
+                    <i class="fas fa-moon dark:hidden"></i>
+                    <i class="fas fa-sun hidden dark:block"></i>
+                </button>
+                <button class="px-6 py-2 bg-amber-600 text-white rounded-full font-medium hover:bg-amber-700 transition">
+                    Book Now
+                </button>
+                <button class="md:hidden">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative h-screen pt-32 pb-20 overflow-hidden">
+        <div class="absolute inset-0 bg-black/30 z-10"></div>
+        <div class="parallax absolute inset-0 bg-[url('https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80')]"></div>
+        
+        <div class="relative z-20 h-full flex items-center">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="max-w-2xl">
+                    <h1 class="text-5xl md:text-7xl font-bold leading-tight mb-6 fade-in" style="animation-delay: 0.3s;">
+                        <span class="gradient-text bg-gradient-to-r from-amber-500 to-amber-700">Luxury</span><br>
+                        <span class="text-white">Redefined</span>
+                    </h1>
+                    <p class="text-xl text-white/90 mb-8 fade-in" style="animation-delay: 0.6s;">
+                        Experience unparalleled elegance at our five-star sanctuary where every detail is crafted to perfection.
+                    </p>
+                    <div class="flex space-x-4 fade-in" style="animation-delay: 0.9s;">
+                        <button class="px-8 py-3 bg-amber-600 text-white rounded-full font-medium hover:bg-amber-700 transform hover:scale-105 transition">
+                            Explore Suites
+                        </button>
+                        <button class="px-8 py-3 border border-white/30 text-white rounded-full font-medium hover:bg-white/10 transform hover:scale-105 transition">
+                            Virtual Tour
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 z-20">
+            <div class="w-10 h-16 rounded-full border-2 border-white/50 flex items-center justify-center">
+                <div class="w-1 h-4 bg-white rounded-full float-animation"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Welcome Section -->
+    <section class="py-20 bg-white dark:bg-gray-900">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="space-y-8">
+                    <div class="flex items-center space-x-4">
+                        <div class="w-12 h-px bg-amber-600"></div>
+                        <span class="text-sm uppercase tracking-widest text-amber-600">Welcome</span>
+                    </div>
+                    <h2 class="text-3xl md:text-4xl font-bold">A Sanctuary of Sophistication</h2>
+                    <p class="text-gray-600 dark:text-gray-300">
+                        Nestled in the heart of the city, Grand Éclat stands as a beacon of refined hospitality. Our historic façade conceals a contemporary masterpiece where tradition meets innovation.
+                    </p>
+                    <p class="text-gray-600 dark:text-gray-300">
+                        Each of our 120 rooms and suites has been meticulously designed to offer a harmonious blend of comfort and elegance, featuring bespoke furnishings and panoramic city views.
+                    </p>
+                    <button class="px-6 py-2 border border-amber-600 text-amber-600 rounded-full font-medium hover:bg-amber-600 hover:text-white transition">
+                        Discover Our Story
+                    </button>
+                </div>
+                
+                <div class="relative">
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="relative h-64 rounded-xl overflow-hidden group">
+                            <img src="https://images.unsplash.com/photo-1564501049412-61c2a3083791?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1632&q=80" 
+                                 alt="Hotel Lobby" 
+                                 class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
+                        </div>
+                        <div class="relative h-64 rounded-xl overflow-hidden group">
+                            <img src="https://images.unsplash.com/photo-1582719478467-185e45e5e74a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                                 alt="Hotel Suite" 
+                                 class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
+                        </div>
+                        <div class="relative h-64 rounded-xl overflow-hidden group">
+                            <img src="https://images.unsplash.com/photo-1611892440501-4c0b1b5c03a9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                                 alt="Hotel Pool" 
+                                 class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
+                        </div>
+                        <div class="relative h-64 rounded-xl overflow-hidden group">
+                            <img src="https://images.unsplash.com/photo-1517248135467-4dbc52a9e5c4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                                 alt="Hotel Restaurant" 
+                                 class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rooms & Suites -->
+    <section class="py-20 bg-gray-50 dark:bg-gray-800/30">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <div class="flex justify-center items-center space-x-4 mb-4">
+                    <div class="w-12 h-px bg-amber-600"></div>
+                    <span class="text-sm uppercase tracking-widest text-amber-600">Accommodations</span>
+                    <div class="w-12 h-px bg-amber-600"></div>
+                </div>
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Rooms & Suites</h2>
+                <p class="max-w-2xl mx-auto text-gray-600 dark:text-gray-300">
+                    Each space at Grand Éclat is a masterpiece of design, offering the perfect balance of luxury and comfort.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Deluxe Room -->
+                <div class="bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition group gold-border">
+                    <div class="relative overflow-hidden h-64">
+                        <img src="https://images.unsplash.com/photo-1566669437685-c710d0f6e3bb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80" 
+                             alt="Deluxe Room" 
+                             class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                        <div class="absolute top-4 right-4 px-3 py-1 bg-amber-600 text-white text-sm rounded-full">
+                            From $450/night
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Deluxe Room</h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">38-42 m² | King or Twin beds</p>
+                        <div class="flex justify-between items-center">
+                            <button class="text-amber-600 hover:text-amber-700 font-medium">
+                                View Details
+                            </button>
+                            <div class="flex text-amber-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Executive Suite -->
+                <div class="bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition group gold-border">
+                    <div class="relative overflow-hidden h-64">
+                        <img src="https://images.unsplash.com/photo-1596178065887-1198b6148b2f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                             alt="Executive Suite" 
+                             class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                        <div class="absolute top-4 right-4 px-3 py-1 bg-amber-600 text-white text-sm rounded-full">
+                            From $850/night
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Executive Suite</h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">65-75 m² | Separate living area</p>
+                        <div class="flex justify-between items-center">
+                            <button class="text-amber-600 hover:text-amber-700 font-medium">
+                                View Details
+                            </button>
+                            <div class="flex text-amber-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Presidential Suite -->
+                <div class="bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition group gold-border">
+                    <div class="relative overflow-hidden h-64">
+                        <img src="https://images.unsplash.com/photo-1578683010236-d716f9a3f461?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                             alt="Presidential Suite" 
+                             class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                        <div class="absolute top-4 right-4 px-3 py-1 bg-amber-600 text-white text-sm rounded-full">
+                            From $2,500/night
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Presidential Suite</h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">120-150 m² | Panoramic city views</p>
+                        <div class="flex justify-between items-center">
+                            <button class="text-amber-600 hover:text-amber-700 font-medium">
+                                View Details
+                            </button>
+                            <div class="flex text-amber-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <button class="px-8 py-3 bg-amber-600 text-white rounded-full font-medium hover:bg-amber-700 transform hover:scale-105 transition">
+                    View All Accommodations
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dining Experience -->
+    <section class="py-20 relative overflow-hidden">
+        <div class="absolute inset-0 bg-black/30 z-10"></div>
+        <div class="parallax absolute inset-0 bg-[url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80')]"></div>
+        
+        <div class="relative z-20">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="max-w-2xl bg-white/90 dark:bg-gray-900/90 backdrop-blur-md p-8 md:p-12 rounded-xl">
+                    <div class="flex items-center space-x-4 mb-4">
+                        <div class="w-12 h-px bg-amber-600"></div>
+                        <span class="text-sm uppercase tracking-widest text-amber-600">Culinary Excellence</span>
+                    </div>
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6">Dining at Grand Éclat</h2>
+                    <p class="text-gray-600 dark:text-gray-300 mb-8">
+                        Our award-winning restaurants offer a gastronomic journey through world cuisines, crafted by Michelin-starred chefs using the finest seasonal ingredients.
+                    </p>
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div>
+                            <h3 class="text-xl font-bold mb-3 flex items-center">
+                                <span class="w-8 h-8 bg-amber-600 text-white rounded-full flex items-center justify-center mr-3">1</span>
+                                Lumière Restaurant
+                            </h3>
+                            <p class="text-gray-600 dark:text-gray-300">
+                                Contemporary French cuisine with panoramic city views. Open for breakfast, lunch, and dinner.
+                            </p>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold mb-3 flex items-center">
+                                <span class="w-8 h-8 bg-amber-600 text-white rounded-full flex items-center justify-center mr-3">2</span>
+                                Jade Garden
+                            </h3>
+                            <p class="text-gray-600 dark:text-gray-300">
+                                Authentic Asian flavors in an elegant setting. Featuring live cooking stations and a sake bar.
+                            </p>
+                        </div>
+                    </div>
+                    <button class="mt-8 px-6 py-2 border border-amber-600 text-amber-600 rounded-full font-medium hover:bg-amber-600 hover:text-white transition">
+                        Explore Dining Options
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Spa & Wellness -->
+    <section class="py-20 bg-white dark:bg-gray-900">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="relative">
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="relative h-64 rounded-xl overflow-hidden group">
+                            <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                                 alt="Spa Treatment" 
+                                 class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
+                        </div>
+                        <div class="relative h-64 rounded-xl overflow-hidden group">
+                            <img src="https://images.unsplash.com/photo-1562322140-76ba5d77e9e2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                                 alt="Spa Pool" 
+                                 class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
+                        </div>
+                        <div class="col-span-2 relative h-64 rounded-xl overflow-hidden group">
+                            <img src="https://images.unsplash.com/photo-1545173168-9f1947eebb70?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80" 
+                                 alt="Spa Relaxation" 
+                                 class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="space-y-8">
+                    <div class="flex items-center space-x-4">
+                        <div class="w-12 h-px bg-amber-600"></div>
+                        <span class="text-sm uppercase tracking-widest text-amber-600">Wellness</span>
+                    </div>
+                    <h2 class="text-3xl md:text-4xl font-bold">Serenity Spa & Wellness</h2>
+                    <p class="text-gray-600 dark:text-gray-300">
+                        Our 2,000 m² spa sanctuary offers a holistic approach to wellbeing, combining ancient healing traditions with modern techniques.
+                    </p>
+                    <div class="space-y-6">
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 rounded-full bg-amber-100 dark:bg-amber-900/50 flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-spa text-amber-600"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-lg">Signature Treatments</h3>
+                                <p class="text-gray-600 dark:text-gray-400">Customized therapies using organic products</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 rounded-full bg-amber-100 dark:bg-amber-900/50 flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-swimming-pool text-amber-600"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-lg">Thermal Experiences</h3>
+                                <p class="text-gray-600 dark:text-gray-400">Heated pools, saunas, and steam rooms</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 rounded-full bg-amber-100 dark:bg-amber-900/50 flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-dumbbell text-amber-600"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-lg">Fitness Center</h3>
+                                <p class="text-gray-600 dark:text-gray-400">State-of-the-art equipment with personal trainers</p>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="px-6 py-2 border border-amber-600 text-amber-600 rounded-full font-medium hover:bg-amber-600 hover:text-white transition">
+                        View Spa Menu
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Special Offers -->
+    <section class="py-20 bg-gray-50 dark:bg-gray-800/30">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <div class="flex justify-center items-center space-x-4 mb-4">
+                    <div class="w-12 h-px bg-amber-600"></div>
+                    <span class="text-sm uppercase tracking-widest text-amber-600">Exclusive Offers</span>
+                    <div class="w-12 h-px bg-amber-600"></div>
+                </div>
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Tailored Experiences</h2>
+                <p class="max-w-2xl mx-auto text-gray-600 dark:text-gray-300">
+                    Discover our curated packages designed to make your stay even more memorable.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Romantic Escape -->
+                <div class="bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition group gold-border">
+                    <div class="relative overflow-hidden h-64">
+                        <img src="https://images.unsplash.com/photo-1519671488599-5b8ab7d1e6a3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                             alt="Romantic Escape" 
+                             class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                        <div class="absolute top-4 left-4 px-3 py-1 bg-amber-600 text-white text-sm rounded-full shimmer-effect">
+                            Limited Availability
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Romantic Escape</h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">Includes champagne, rose petal turndown, couples massage, and late checkout.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-amber-600 font-bold">25% OFF</span>
+                            <button class="px-4 py-2 bg-amber-600 text-white rounded-full text-sm font-medium hover:bg-amber-700 transition">
+                                Book Package
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Family Getaway -->
+                <div class="bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition group gold-border">
+                    <div class="relative overflow-hidden h-64">
+                        <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                             alt="Family Getaway" 
+                             class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                        <div class="absolute top-4 left-4 px-3 py-1 bg-amber-600 text-white text-sm rounded-full shimmer-effect">
+                            Summer Special
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Family Getaway</h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">Kids stay free, complimentary breakfast, and access to children's club.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-amber-600 font-bold">30% OFF</span>
+                            <button class="px-4 py-2 bg-amber-600 text-white rounded-full text-sm font-medium hover:bg-amber-700 transition">
+                                Book Package
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-20 bg-white dark:bg-gray-900">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <div class="flex justify-center items-center space-x-4 mb-4">
+                    <div class="w-12 h-px bg-amber-600"></div>
+                    <span class="text-sm uppercase tracking-widest text-amber-600">Guest Reviews</span>
+                    <div class="w-12 h-px bg-amber-600"></div>
+                </div>
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">What Our Guests Say</h2>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="bg-gray-50 dark:bg-gray-800 p-8 rounded-xl">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full overflow-hidden">
+                            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Sarah J." class="w-full h-full object-cover">
+                        </div>
+                        <div class="ml-4">
+                            <h4 class="font-bold">Sarah J.</h4>
+                            <p class="text-sm text-gray-500">New York</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 dark:text-gray-300 italic mb-4">
+                        "The attention to detail at Grand Éclat was breathtaking. Our suite was immaculate, and the staff anticipated our every need."
+                    </p>
+                    <div class="flex text-amber-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="bg-gray-50 dark:bg-gray-800 p-8 rounded-xl">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full overflow-hidden">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Michael T." class="w-full h-full object-cover">
+                        </div>
+                        <div class="ml-4">
+                            <h4 class="font-bold">Michael T.</h4>
+                            <p class="text-sm text-gray-500">London</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 dark:text-gray-300 italic mb-4">
+                        "The spa experience was transformative. The therapists were incredibly skilled, and the facilities were pristine."
+                    </p>
+                    <div class="flex text-amber-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="bg-gray-50 dark:bg-gray-800 p-8 rounded-xl">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full overflow-hidden">
+                            <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Aisha K." class="w-full h-full object-cover">
+                        </div>
+                        <div class="ml-4">
+                            <h4 class="font-bold">Aisha K.</h4>
+                            <p class="text-sm text-gray-500">Dubai</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 dark:text-gray-300 italic mb-4">
+                        "Dining at Lumière was a highlight of our trip. The sommelier's wine pairing elevated each course to perfection."
+                    </p>
+                    <div class="flex text-amber-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-20 bg-gradient-to-r from-amber-600 to-amber-800 text-white">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">Experience Grand Éclat</h2>
+            <p class="max-w-2xl mx-auto mb-8 text-amber-100">
+                Our concierge team is available 24/7 to assist with reservations, special requests, and personalized itineraries.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+                <button class="px-8 py-3 bg-white text-amber-600 rounded-full font-medium hover:bg-gray-100 transform hover:scale-105 transition">
+                    Book Your Stay
+                </button>
+                <button class="px-8 py-3 border border-white/30 rounded-full font-medium hover:bg-white/10 transform hover:scale-105 transition">
+                    Contact Concierge
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-300 py-16">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-12">
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <div class="w-10 h-10 rounded-full bg-gradient-to-br from-amber-500 to-amber-700 flex items-center justify-center">
+                            <i class="fas fa-hotel text-white text-xl"></i>
+                        </div>
+                        <span class="text-xl font-bold gradient-text bg-gradient-to-r from-amber-500 to-amber-700">GRAND ÉCLAT</span>
+                    </div>
+                    <p class="mb-4">
+                        Redefining luxury hospitality through exceptional service and timeless elegance.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-gray-700">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-gray-700">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-gray-700">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold text-white mb-4">Hotel</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-white">Rooms & Suites</a></li>
+                        <li><a href="#" class="hover:text-white">Dining</a></li>
+                        <li><a href="#" class="hover:text-white">Spa & Wellness</a></li>
+                        <li><a href="#" class="hover:text-white">Meetings & Events</a></li>
+                        <li><a href="#" class="hover:text-white">Gallery</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold text-white mb-4">Information</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-white">About Us</a></li>
+                        <li><a href="#" class="hover:text-white">Sustainability</a></li>
+                        <li><a href="#" class="hover:text-white">Careers</a></li>
+                        <li><a href="#" class="hover:text-white">Press Center</a></li>
+                        <li><a href="#" class="hover:text-white">Contact Us</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold text-white mb-4">Contact</h3>
+                    <address class="not-italic space-y-2">
+                        <p>123 Luxury Avenue<br>New York, NY 10001</p>
+                        <p>Phone: +1 (555) 123-4567</p>
+                        <p>Email: reservations@grand-eclat.com</p>
+                    </address>
+                    <div class="mt-4">
+                        <button class="px-6 py-2 bg-amber-600 text-white rounded-full font-medium hover:bg-amber-700 transition">
+                            Directions
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p>© 2023 GRAND ÉCLAT. All rights reserved.</p>
+                <div class="flex space-x-6 mt-4 md:mt-0">
+                    <a href="#" class="hover:text-white">Privacy Policy</a>
+                    <a href="#" class="hover:text-white">Terms of Service</a>
+                    <a href="#" class="hover:text-white">Accessibility</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Theme toggle functionality
+        const themeToggle = document.getElementById('theme-toggle');
+        const html = document.documentElement;
+        
+        // Check for saved theme preference or use preferred color scheme
+        const savedTheme = localStorage.getItem('theme') || 
+                          (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        html.classList.add(savedTheme);
+        
+        themeToggle.addEventListener('click', () => {
+            html.classList.toggle('dark');
+            const theme = html.classList.contains('dark') ? 'dark' : 'light';
+            localStorage.setItem('theme', theme);
+        });
+        
+        // Simple scroll animation
+        const animateOnScroll = () => {
+            const elements = document.querySelectorAll('.fade-in');
+            elements.forEach(el => {
+                const rect = el.getBoundingClientRect();
+                const isVisible = (rect.top <= window.innerHeight * 0.8);
+                if (isVisible) {
+                    el.style.animationPlayState = 'running';
+                }
+            });
+        };
+        
+        window.addEventListener('scroll', animateOnScroll);
+        animateOnScroll(); // Run once on load
+    </script>
+</body>
+</html>
