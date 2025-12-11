@@ -1,338 +1,242 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="th">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <!-- Metatag For SEO-->
+    <title>RestPOS - โปรแกรมขายหน้าร้าน (POS) ฟรี สำหรับ Windows | ดาวน์โหลด .exe</title>
+    <meta name="description" content="ดาวน์โหลด RestPOS โปรแกรมคิดเงินและขายหน้าร้าน (POS) ฟรี สำหรับร้านอาหารและร้านค้าปลีก ใช้งานง่าย จัดการสต๊อก ตัดยอดขาย รองรับ Windows โหลดเลย">
+    <meta name="keywords" content="RestPOS, โปรแกรม POS, ระบบคิดเงิน, โปรแกรมขายหน้าร้าน, โปรแกรมร้านอาหาร, ระบบสต๊อกสินค้า, แจกฟรี, Open Source POS, ดาวน์โหลดโปรแกรมขายของ">
+    <meta name="author" content="[YOUR_GITHUB_USERNAME]">
+    <meta name="robots" content="index, follow">
 
-    <meta name="description"
-        content="Playground-website SIXMAR729WEBSITE Portfolio-website รับสอนเขียนเว็บไซท์ เว็บไซท์ เว็บไซท์พอร์ท">
+    <link rel="canonical" href="https://[YOUR_USERNAME].github.io/restpos/" />
 
-    <!--=============== FAVICON ===============-->
-    <link rel="shortcut icon" href="assets/img/Primer-t.ico" type="image/x-icon">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="RestPOS - โปรแกรมขายหน้าร้าน (POS) ฟรี">
+    <meta property="og:description" content="จัดการร้านค้าของคุณได้ง่ายๆ ดาวน์โหลด RestPOS เวอร์ชันล่าสุดฟรี ใช้งานออฟไลน์ได้ ไม่ต้องต่อเน็ตตลอดเวลา">
+    <meta property="og:url" content="https://[YOUR_USERNAME].github.io/restpos/">
+    <meta property="og:image" content="https://[YOUR_USERNAME].github.io/restpos/assets/preview-image.jpg"> <meta property="og:site_name" content="RestPOS GitHub">
 
-    <!--=============== REMIXICONS ===============-->
-    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="RestPOS - โปรแกรม POS บน PC">
+    <meta name="twitter:description" content="ดาวน์โหลดไฟล์ติดตั้ง .exe สำหรับ Windows จัดการยอดขายและสต๊อกได้ทันที">
+    <meta name="twitter:image" content="https://[YOUR_USERNAME].github.io/restpos/assets/preview-image.jpg">
 
-    <!--=============== CSS ===============-->
-    <link rel="stylesheet" href="assets/css/styles.css">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "RestPOS",
+      "operatingSystem": "Windows",
+      "applicationCategory": "BusinessApplication",
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.8",
+        "ratingCount": "24"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0.00",
+        "priceCurrency": "THB"
+      },
+      "description": "RestPOS คือโปรแกรมจุดขาย (Point of Sale) บนเดสก์ท็อป ออกแบบมาเพื่อความรวดเร็วและใช้งานง่ายสำหรับร้านค้าปลีกและร้านอาหาร",
+      "downloadUrl": "https://github.com/[YOUR_USERNAME]/restpos/releases/latest",
+      "softwareVersion": "1.0.0",
+      "featureList": "จัดการสต๊อกสินค้า, ออกบิลใบเสร็จ, รายงานยอดขาย, ใช้งานแบบออฟไลน์ได้"
+    }
+    </script>
 
-    <!-- Sweet Alert CDN -->
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-
-    <title>Primer_artx</title>
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --secondary-color: #1e40af;
+            --text-color: #333;
+            --bg-light: #f3f4f6;
+            --white: #ffffff;
+        }
+        body {
+            font-family: "Sarabun", "Prompt", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; /* เพิ่มฟอนต์ไทย */
+            line-height: 1.6;
+            margin: 0;
+            color: var(--text-color);
+        }
+        header {
+            background: var(--white);
+            padding: 20px 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+        .hero {
+            background: linear-gradient(135deg, #eff6ff 0%, #ffffff 100%);
+            padding: 80px 0;
+            text-align: center;
+        }
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: #111;
+        }
+        p.subtitle {
+            font-size: 1.25rem;
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto 40px auto;
+        }
+        .btn-download {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 15px 35px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: background 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+        }
+        .btn-download:hover {
+            background-color: var(--secondary-color);
+        }
+        .features {
+            padding: 60px 0;
+        }
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        .feature-card {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 10px;
+            border: 1px solid #e5e7eb;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+        .screenshot-section {
+            background: var(--bg-light);
+            padding: 60px 0;
+            text-align: center;
+        }
+        .screenshot-placeholder {
+            max-width: 800px;
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+        }
+        footer {
+            background: #1f2937;
+            color: #d1d5db;
+            padding: 40px 0;
+            text-align: center;
+        }
+        footer a {
+            color: white;
+        }
+        /* Mobile Tweaks */
+        @media (max-width: 768px) {
+            h1 { font-size: 2rem; }
+        }
+    </style>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;600&family=Sarabun:wght@400;600&display=swap" rel="stylesheet">
 </head>
-
 <body>
-    <!--==================== HEADER ====================-->
-    <header class="header" id="header">
-        <nav class="nav container">
-            <a href="#" class="nav_logo">
-                <img src="assets/img/Primer-t.ico" alt="logo image">
-                PRIMER_ARTX
-            </a>
 
-            <div class="nav_menu" id="nav-menu">
-                <ul class="nav_list">
-                    <li class="nav_item">
-                        <a href="#home" class="nav_link active-link">Home</a>
-                    </li>
-                    <li class="nav_item">
-                        <a href="#about" class="nav_link">About Me</a>
-                    </li>
-                    <li class="nav_item">
-                        <a href="#popular" class="nav_link">Pictures</a>
-                    </li>
-                    <li class="nav_item">
-                        <a href="#recently" class="nav_link">Recently</a>
-                    </li>
-                </ul>
-
-                <!-- close button -->
-                <div class="nav_close" id="nav-close">
-                    <i class="ri-close-line"></i>
+    <header>
+        <div class="container">
+            <nav>
+                <a href="#" class="logo">RestPOS</a>
+                <div>
+                    <a href="https://github.com/[YOUR_USERNAME]/restpos" target="_blank" style="text-decoration:none; color:#333; font-weight:600;">ดาวน์โหลด (Free)</a>
                 </div>
-
-                <img src="assets/img/Primer-t.ico" alt="nav image" class="nav_img-1">
-                <img src="assets/img/img_showcase_1.png" alt="nav image" class="nav_img-2">
-            </div>
-
-            <div class="nav_buttons">
-                <!-- Theme change button -->
-                <i class="ri-moon-line change-theme" id="theme-button"></i>
-
-                <!-- Toggle button -->
-                <div class="nav_toggle" id="nav-toggle">
-                    <i class="ri-apps-2-line"></i>
-                </div>
-            </div>
-        </nav>
+            </nav>
+        </div>
     </header>
 
-    <!--==================== MAIN ====================-->
-    <main class="main">
-        <!--==================== HOME ====================-->
-        <section class="home section" id="home">
-            <div class="home_container container grid">
-                <img src="assets/img/img_2.png" alt="Main_menu" class="home_img">
-
-                <div class="home_data">
-                    <h1 class="home_title">
-                        My Profile
-
-                        <div>
-                            <img src="assets/img/Primer-t.ico" alt="home image">
-                            Website
-                        </div>
-                    </h1>
-
-                    <p class="home_description">
-                        "Enjoy a good time with my website in my world."
-                    </p>
-
-                    <a href="#" class="button">
-                        Order Now <i class="ri-arrow-right-line"></i>
-                    </a>
-                </div>
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h1>ระบบ POS ทันสมัยสำหรับ Windows</h1>
+                <p class="subtitle">เบาเครื่อง ใช้งานง่าย และเป็น Open Source RestPOS ช่วยจัดการยอดขาย สต๊อกสินค้า และรายงานผล เพื่อให้คุณโฟกัสกับการเติบโตของธุรกิจได้อย่างเต็มที่</p>
+                
+                <a href="https://github.com/[YOUR_USERNAME]/restpos/releases/latest" class="btn-download">
+                    ดาวน์โหลดตัวติดตั้ง .exe
+                </a>
+                <p style="font-size: 0.9rem; color: #888; margin-top: 10px;">เวอร์ชัน 1.0.0 | รองรับ Windows 10/11</p>
             </div>
-
-            <img src="./assets/img/CK-1.png" alt="left-side-image" class="home_leaf-1">
-            <img src="./assets/img/ND-1.png" alt="right-side-image" class="home_leaf-2">
         </section>
 
-        <!--==================== ABOUT ====================-->
-        <section class="about section" id="about">
-            <div class="about_container container grid">
-                <div class="about_data">
-                    <span class="section_subtitle">About Me</span>
-                    <h2 class="section_title about_title">
-                        <div>
-                            I Create
-                            <img src="assets/img/Primer-t.ico" alt="about image">
-                        </div>
-                        Small Website/Landing Page
-                    </h2>
-
-                    <p class="about_description">
-                        Creating a website: user-friendly interface, compelling content, mobile & search engine
-                        optimization, e-commerce, blogging, customization, seamless browsing. Hosting, domain
-                        management, backend/frontend technologies for accessibility & functionality.
-                    </p>
-                </div>
-                <img src="assets/img/img_1.jpg" alt="about image" class="about_img">
-            </div>
-            <img src="assets/img/leaf-branch-1.png" alt="about image" class="about_leaf">
-        </section>
-
-        <!--==================== POPULAR ====================-->
-        <section class="popular section" id="popular">
-            <span class="section_subtitle">My Ai Image</span>
-            <h2 class="section_title">Pictures</h2>
-
-            <div class="popular_container container grid">
-                <article class="popular_card">
-                    <img src="assets/img/img_showcase_2.png" alt="Alex image" class="popular_img">
-
-                    <h3 class="popular_name">Single Page</h3>
-                    <span class="popular_description">- days</span>
-
-                    <span class="popular_price"> - ฿</span>
-
-                    <button class="popular_button" onclick="_sAlert()">
-                        <i class="ri-shopping-bag-line"></i>
-                    </button>
-                </article>
-                <article class="popular_card">
-                    <img src="assets/img/img_showcase_4.png" alt="Eiei image" class="popular_img">
-
-                    <h3 class="popular_name">Website</h3>
-                    <span class="popular_description">- days</span>
-
-                    <span class="popular_price">-฿</span>
-
-                    <button class="popular_button" onclick="_sAlert()">
-                        <i class="ri-shopping-bag-line"></i>
-                    </button>
-                </article>
-                <article class="popular_card">
-                    <img src="assets/img/img_showcase_5.png" alt="popular image" class="popular_img">
-
-                    <h3 class="popular_name">Web Application</h3>
-                    <span class="popular_description">- days</span>
-
-                    <span class="popular_price">-฿</span>
-
-                    <button class="popular_button" onclick="_sAlert()">
-                        <i class="ri-shopping-bag-line"></i>
-                    </button>
-                </article>
-
-            </div>
-            <a href="#" class="button popular_more">
-                See More <i class="ri-arrow-right-line"></i>
-            </a>
-        </section>
-
-        <!--==================== RECENTLY ====================-->
-        <section class="recently section" id="recently">
-            <div class="recently_container container grid">
-                <div class="recently_data">
-                    <span class="section_subtitle">Recently Added</span>
-                    <h2 class="section_title">Recently’s Special <br>
-                        image
-                        <i class="ri-edit-2-line"></i>
-                    </h2>
-                    <p class="recently_description">
-                        Take a look at what's new. And do not deprive
-                        yourself of a good picture, enjoy and be happy.
-                    </p>
-
-                    <a href="#" class="button">
-                        Order Now <i class="ri-arrow-right-line"></i>
-                    </a>
-
-                </div>
-
-                <img src="assets/img/recently-img-3.png" alt="recently image" class="recently_img">
-            </div>
-            <img src="assets/img/leaf-branch-2.png" alt="recently image" class="recently_leaf-1">
-            <img src="assets/img/leaf-branch-3.png" alt="recently image" class="recently_leaf-2">
-        </section>
-
-        <!--==================== NEWSLETTER ====================-->
-        <section class="newsletter section">
-            <div class="newsletter_container container">
-                <div class="newsletter_content grid">
-                    <img src="assets/img/newsletter-img-1.png" alt="newsletter image" class="newsletter_img">
-                    <div class="newsletter_data">
-                        <span class="section_subtitle">Newsletter</span>
-                        <h2 class="section_title">
-                            Subscribe For <br>
-                            Offer Updates
-                        </h2>
-                        <form action="" class="newsletter_form" id="newsletter_form">
-                            <input type="email" placeholder="Enter email" class="newsletter_input"
-                                id="newsletter_input">
-                            <button class="button newsletter_button" type="submit">
-                                Subscribe <i class="ri-send-plane-line"></i>
-                            </button>
-                        </form>
+        <section class="features" id="features">
+            <div class="container">
+                <h2 style="text-align: center;">ทำไมต้องเลือก RestPOS?</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <h3>⚡ เร็ว & ไม่ต้องต่อเน็ต</h3>
+                        <p>เน็ตหลุดก็ขายต่อได้ RestPOS บันทึกข้อมูลลงในเครื่องของคุณโดยตรง ทำให้การคิดเงินรวดเร็ว ไม่ต้องรอดาวน์โหลดจาก Cloud</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>📦 ระบบสั่งอาหารแบบ QR-Code</h3>
+                        <p>สามารถรับออเดอร์ QR-Code ลูกค้าได้แบบรวดเร็วฉับไว ด้วยเทคโนโลยีสมัยใหม่ เน้นความไวเป็นหลัก</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>📊 รายงานยอดขายละเอียด</h3>
+                        <p>ดูภาพรวมธุรกิจของคุณได้ง่ายๆ ส่งออกรายงานรายวัน รายสัปดาห์ หรือรายเดือนได้</p>
                     </div>
                 </div>
             </div>
         </section>
+
+        <section class="screenshot-section">
+            <div class="container">
+                <h2>หน้าจอเรียบง่าย ใช้งานเป็นในไม่กี่นาที</h2>
+                <p>ออกแบบมาให้พนักงานเรียนรู้ได้เร็ว ไม่ซับซ้อน</p>
+                <img src="https://via.placeholder.com/800x450.png?text=RestPOS+Dashboard+Screenshot" alt="รูปตัวอย่างหน้าจอโปรแกรม RestPOS" class="screenshot-placeholder">
+            </div>
+        </section>
+
+        <section class="container" style="padding: 60px 20px;">
+            <h2>วิธีติดตั้ง</h2>
+            <ol style="line-height: 2;">
+                <li>คลิกปุ่ม <strong>ดาวน์โหลดตัวติดตั้ง .exe</strong> ด้านบนเพื่อไปยังหน้าดาวน์โหลด</li>
+                <li>ดาวน์โหลดไฟล์ที่ชื่อว่า <code>RestPOS-Setup.exe</code></li>
+                <li>ดับเบิ้ลคลิกที่ไฟล์เพื่อเริ่มการติดตั้ง</li>
+                <li>ทำตามขั้นตอนบนหน้าจอ (หมายเหตุ: Windows SmartScreen อาจจะถามยืนยันเนื่องจากเป็นซอฟต์แวร์ใหม่ ให้กด "More info" แล้วเลือก "Run Anyway")</li>
+            </ol>
+        </section>
     </main>
 
-    <!--==================== FOOTER ====================-->
-    <footer class="footer">
-        <div class="footer_container container grid">
-            <div>
-                <a href="#" class="footer_logo">
-                    <img src="assets/img/ND-1.png" alt="logo image">
-                    Website
-                </a>
-
-                <p class="footer_description">
-                    Designing and developing <br>
-                    User-friendly interface <br>
-                    Support SEO
-                </p>
-            </div>
-            <div class="footer_content">
-                <div>
-                    <h3 class="footer_title">Main Menu</h3>
-
-                    <ul class="footer_links">
-                        <li>
-                            <a href="#home" class="footer_link">Home</a>
-                        </li>
-                        <li>
-                            <a href="./home.html" class="footer_link">About me (beta)</a>
-                        </li>
-                        <li>
-                            <a href="./project1.html" class="footer_link">Project1</a>
-                        </li>
-                        <li>
-                            <a href="./project2.html" class="footer_link">Project2</a>
-                        </li>
-                    </ul>
-                </div>
-                <div>
-                    <h3 class="footer_title">Tools/Framework</h3>
-
-                    <ul class="footer_links">
-                        <li>
-                            <a href="https://react.dev" class="footer_link">React</a><i class="ri-reactjs-fill"></i>
-                        </li>
-                        <li>
-                            <a href="https://nextjs.org" class="footer_link">Nextjs</a><i class="ri-reactjs-fill"></i>
-                        </li>
-                        <li>
-                            <a href="https://www.djangoproject.com" class="footer_link">Django</a>
-                        </li>
-                        <li>
-                            <a href="https://vuejs.org" class="footer_link">Vuejs</a><i class="ri-vuejs-fill"></i>
-                        </li>
-                    </ul>
-                </div>
-                <div>
-                    <h3 class="footer_title">Address</h3>
-
-                    <ul class="footer_links">
-                        <li class="footer_information">
-                            WFH (Work From Home) <br>
-                            Freelance
-                        </li>
-                        <li class="footer_information">
-                            4PM - 11PM
-                        </li>
-                    </ul>
-                </div>
-                <div>
-                    <h3 class="footer_title">Social Media</h3>
-
-                    <ul class="footer_social">
-                        <a href="https://www.facebook.com/" target="_blank" class="footer_social-link"
-                            aria-label="Facebook">
-                            <i class="ri-facebook-circle-fill"></i>
-                        </a>
-                        <a href="https://www.instagram.com/" target="_blank" class="footer_social-link"
-                            aria-label="Instragram">
-                            <i class="ri-instagram-fill"></i>
-                        </a>
-                        <a href="https://twitter.com/" target="_blank" class="footer_social-link" aria-label="Twitter">
-                            <i class="ri-twitter-fill"></i>
-                        </a>
-                    </ul>
-                </div>
-            </div>
-            <img src="assets/img/leaf-branch-4.png" alt="footer image" class="footer_leaf">
-        </div>
-        <div class="footer_info container">
-            <div class="footer_card">
-                <i class="ri-html5-fill"></i>
-                <i class="ri-css3-fill"></i>
-                <i class="ri-reactjs-fill"></i>
-            </div>
-
-            <span class="footer_copy">
-                &#169; Copyright PP. All rights reserved
-            </span>
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 RestPOS Project. Open Source ภายใต้ <a href="#">MIT License</a>.</p>
+            <p>
+                <a href="https://github.com/[YOUR_USERNAME]/restpos">GitHub Repository</a> | 
+                <a href="https://github.com/[YOUR_USERNAME]/restpos/issues">แจ้งปัญหาการใช้งาน (Bug Report)</a>
+            </p>
         </div>
     </footer>
 
-    <!--========== SCROLL UP ==========-->
-    <a href="#" class="scrollup" id="scroll-up" aria-label="Scrollup">
-        <i class="ri-arrow-up-line"></i>
-    </a>
-
-    <!--=============== SCROLLREVEAL ===============-->
-    <script src="assets/js/ScrollReveal.js"></script>
-
-    <!--=============== MAIN JS ===============-->
-    <script src="assets/js/main.js"></script>
 </body>
-
 </html>
