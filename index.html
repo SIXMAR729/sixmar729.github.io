@@ -1,245 +1,207 @@
 <!DOCTYPE html>
-<html lang="th">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-
-    <title>RestPOS - โปรแกรมขายหน้าร้าน (POS) ฟรี สำหรับ Windows | ดาวน์โหลด .exe</title>
-    <meta name="description" content="ดาวน์โหลด RestPOS โปรแกรมคิดเงินและขายหน้าร้าน (POS) ฟรี สำหรับร้านอาหารและร้านค้าปลีก ใช้งานง่าย จัดการสต๊อก ตัดยอดขาย รองรับ Windows โหลดเลย">
-    <meta name="keywords" content="RestPOS, โปรแกรม POS, ระบบคิดเงิน, โปรแกรมขายหน้าร้าน, โปรแกรมร้านอาหาร, ระบบสต๊อกสินค้า, แจกฟรี, Open Source POS, ดาวน์โหลดโปรแกรมขายของ">
-    <meta name="author" content="SIXMAR729">
-    <meta name="robots" content="index, follow">
-
-    <link rel="canonical" href="https://sixmar729.github.io/" />
-
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="RestPOS - โปรแกรมขายหน้าร้าน (POS) ฟรี">
-    <meta property="og:description" content="จัดการร้านค้าของคุณได้ง่ายๆ ดาวน์โหลด RestPOS เวอร์ชันล่าสุดฟรี ใช้งานออฟไลน์ได้ ไม่ต้องต่อเน็ตตลอดเวลา">
-    <meta property="og:url" content="https://sixmar729.github.io/restpos/">
-    <meta property="og:image" content="https://sixmar729.github.io/restpos/assets/preview-image.jpg"> <meta property="og:site_name" content="RestPOS GitHub">
-
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="RestPOS - โปรแกรม POS บน PC">
-    <meta name="twitter:description" content="ดาวน์โหลดไฟล์ติดตั้ง .exe สำหรับ Windows จัดการยอดขายและสต๊อกได้ทันที">
-    <meta name="twitter:image" content="https://[YOUR_USERNAME].github.io/restpos/assets/preview-image.jpg">
-
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "SoftwareApplication",
-      "name": "RestPOS",
-      "operatingSystem": "Windows",
-      "applicationCategory": "BusinessApplication",
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "4.8",
-        "ratingCount": "24"
-      },
-      "offers": {
-        "@type": "Offer",
-        "price": "0.00",
-        "priceCurrency": "THB"
-      },
-      "description": "RestPOS คือโปรแกรมจุดขาย (Point of Sale) บนเดสก์ท็อป ออกแบบมาเพื่อความรวดเร็วและใช้งานง่ายสำหรับร้านค้าปลีกและร้านอาหาร",
-      "downloadUrl": "https://github.com/[YOUR_USERNAME]/restpos/releases/latest",
-      "softwareVersion": "1.0.0",
-      "featureList": "จัดการออเดอร์, ออกบิลใบเสร็จ, รายงานยอดขาย, ใช้งานแบบออฟไลน์ได้"
-    }
-    </script>
-
+    <title>Accounting Assistant Skill | Google Edge AI Gallery</title>
     <style>
         :root {
             --primary-color: #2563eb;
-            --secondary-color: #1e40af;
-            --text-color: #333;
-            --bg-light: #f3f4f6;
-            --white: #ffffff;
+            --primary-hover: #1d4ed8;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
         }
-        body {
-            font-family: "Sarabun", "Prompt", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; /* เพิ่มฟอนต์ไทย */
-            line-height: 1.6;
+
+        * {
+            box-sizing: border-box;
             margin: 0;
-            color: var(--text-color);
+            padding: 0;
         }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
         header {
-            background: var(--white);
-            padding: 20px 0;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .logo {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--primary-color);
-            text-decoration: none;
-        }
-        .hero {
-            background: linear-gradient(135deg, #eff6ff 0%, #ffffff 100%);
-            padding: 80px 0;
-            text-align: center;
-        }
-        h1 {
-            font-size: 3rem;
-            margin-bottom: 20px;
-            color: #111;
-        }
-        p.subtitle {
-            font-size: 1.25rem;
-            color: #666;
-            max-width: 600px;
-            margin: 0 auto 40px auto;
-        }
-        .btn-download {
             background-color: var(--primary-color);
             color: white;
-            padding: 15px 35px;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        header p {
             font-size: 1.2rem;
-            font-weight: 600;
-            border-radius: 8px;
-            text-decoration: none;
-            transition: background 0.3s ease;
-            display: inline-flex;
-            align-items: center;
-        }
-        .btn-download:hover {
-            background-color: var(--secondary-color);
-        }
-        .features {
-            padding: 60px 0;
-        }
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
-        }
-        .feature-card {
-            background: var(--white);
-            padding: 30px;
-            border-radius: 10px;
-            border: 1px solid #e5e7eb;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-        }
-        .screenshot-section {
-            background: var(--bg-light);
-            padding: 60px 0;
-            text-align: center;
-        }
-        .screenshot-placeholder {
             max-width: 800px;
-            width: 100%;
-            height: auto;
-            border-radius: 10px;
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-            margin-top: 20px;
+            margin: 0 auto;
+            opacity: 0.9;
         }
-        footer {
-            background: #1f2937;
-            color: #d1d5db;
-            padding: 40px 0;
-            text-align: center;
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem;
         }
-        footer a {
-            color: white;
+
+        section {
+            background-color: var(--card-bg);
+            border-radius: 8px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
         }
-        /* Mobile Tweaks */
+
+        h2 {
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            font-size: 1.75rem;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 0.5rem;
+        }
+
+        p {
+            margin-bottom: 1rem;
+            color: var(--text-main);
+        }
+
+        ul, ol {
+            margin-bottom: 1rem;
+            padding-left: 1.5rem;
+        }
+
+        li {
+            margin-bottom: 0.75rem;
+        }
+
+        code {
+            background-color: #f1f5f9;
+            color: #ef4444;
+            padding: 0.2rem 0.4rem;
+            border-radius: 4px;
+            font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+            font-size: 0.9em;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .feature-card {
+            background: #f8fafc;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border: 1px solid #e2e8f0;
+        }
+
+        .feature-card h3 {
+            color: var(--text-main);
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .architecture-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .architecture-list li {
+            background: #f8fafc;
+            padding: 1rem;
+            border-radius: 6px;
+            margin-bottom: 0.5rem;
+            border-left: 4px solid var(--primary-color);
+        }
+
         @media (max-width: 768px) {
-            h1 { font-size: 2rem; }
+            header {
+                padding: 3rem 1rem;
+            }
+            .container {
+                padding: 1rem;
+            }
         }
     </style>
-    
-    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;600&family=Sarabun:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
 
     <header>
-        <div class="container">
-            <nav>
-                <a href="#" class="logo">RestPOS</a>
-                <div>
-                    <a href="https://drive.google.com/drive/folders/1pGFQxa6lJQextcqXPXXVK01Qg1gEFHZX" target="_blank" style="text-decoration:none; color:#333; font-weight:600;">ดาวน์โหลด (Free)</a>
-                </div>
-            </nav>
-        </div>
+        <h1>Accounting Assistant Skill</h1>
+        <p>An accounting assistant for the Google Edge AI Gallery that analyzes images of receipts and invoices to extract line items, vendors, and total amounts, securely saving them to a local in-browser database.</p>
     </header>
 
-    <main>
-        <section class="hero">
-            <div class="container">
-                <h1>ระบบ POS ทันสมัยสำหรับ Windows</h1>
-                <p class="subtitle">เบาเครื่อง ใช้งานง่าย และเป็น Open Source RestPOS ช่วยจัดการยอดขาย ออเดอร์สินค้า และรายงานผล เพื่อให้คุณโฟกัสกับการเติบโตของธุรกิจได้อย่างเต็มที่</p>
-                
-                <a href="https://drive.google.com/drive/folders/1pGFQxa6lJQextcqXPXXVK01Qg1gEFHZX" class="btn-download">
-                    ดาวน์โหลดตัวติดตั้ง .exe
-                </a>
-                <p style="font-size: 0.9rem; color: #888; margin-top: 10px;">เวอร์ชัน 1.0.0 | รองรับ Windows 10/11</p>
-            </div>
+    <div class="container">
+        
+        <section id="overview">
+            <h2>Overview</h2>
+            <p>The Accounting Assistant acts as a local processor for your financial documents. By supplying a photo of a receipt or invoice, or directly describing an expense, the AI uses structured data extraction to capture core details like the vendor, total amount, date, and line items. The assistant then stores this information securely in your device's local database using an SQLite abstraction over IndexedDB via WebAssembly (<code>sql.js</code>).</p>
         </section>
 
-        <section class="features" id="features">
-            <div class="container">
-                <h2 style="text-align: center;">ทำไมต้องเลือก RestPOS?</h2>
-                <div class="features-grid">
-                    <div class="feature-card">
-                        <h3>⚡ เร็ว & ไม่ต้องต่อเน็ต</h3>
-                        <p>เน็ตหลุดก็ขายต่อได้ RestPOS บันทึกข้อมูลลงในเครื่องของคุณโดยตรง ทำให้การคิดเงินรวดเร็ว ไม่ต้องรอดาวน์โหลดจาก Cloud</p>
-                    </div>
-                    <div class="feature-card">
-                        <h3>📦 ระบบสั่งอาหารแบบ QR-Code</h3>
-                        <p>สามารถรับออเดอร์ QR-Code ลูกค้าได้แบบรวดเร็วฉับไว ด้วยเทคโนโลยีสมัยใหม่ เน้นความไวเป็นหลัก</p>
-                    </div>
-                    <div class="feature-card">
-                        <h3>📊 รายงานยอดขายละเอียด</h3>
-                        <p>ดูภาพรวมธุรกิจของคุณได้ง่ายๆ ส่งออกรายงานรายวัน รายสัปดาห์ หรือรายเดือนได้</p>
-                    </div>
+        <section id="features">
+            <h2>Features</h2>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h3>Automated Data Extraction</h3>
+                    <p>Transforms pictures of physical receipts/invoices into structured <code>JSON</code>.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Local Embedded Database</h3>
+                    <p>Uses a WebAssembly-compiled SQLite database (<code>sql-wasm.js</code>) backed by <code>IndexedDB</code> to ensure your data never improperly leaks to the cloud. All persistent data lives on the edge device.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Web Dashboard Integration</h3>
+                    <p>Renders a rich HTML view (<code>assets/webview.html</code>) to display your saved expenses and receipts directly on your mobile device.</p>
                 </div>
             </div>
         </section>
 
-        <section class="screenshot-section">
-            <div class="container">
-                <h2>หน้าจอเรียบง่าย ใช้งานเป็นในไม่กี่นาที</h2>
-                <p>ออกแบบมาให้พนักงานเรียนรู้ได้เร็ว ไม่ซับซ้อน</p>
-                <img src="https://via.placeholder.com/800x450.png?text=RestPOS+Dashboard+Screenshot" alt="รูปตัวอย่างหน้าจอโปรแกรม RestPOS" class="screenshot-placeholder">
-            </div>
-        </section>
-
-        <section class="container" style="padding: 60px 20px;">
-            <h2>วิธีติดตั้ง</h2>
-            <ol style="line-height: 2;">
-                <li>คลิกปุ่ม <strong>ดาวน์โหลดตัวติดตั้ง .exe</strong> ด้านบนเพื่อไปยังหน้าดาวน์โหลด</li>
-                <li>ดาวน์โหลดไฟล์ที่ชื่อว่า <code>RestPOS-Setup.exe</code></li>
-                <li>ดับเบิ้ลคลิกที่ไฟล์เพื่อเริ่มการติดตั้ง (Run as Administrator)</li>
-                <li>ทำตามขั้นตอนบนหน้าจอ (หมายเหตุ: Windows SmartScreen อาจจะถามยืนยันเนื่องจากเป็นซอฟต์แวร์ใหม่ ให้กด "More info" แล้วเลือก "Run Anyway")</li>
+        <section id="how-it-works">
+            <h2>How It Works</h2>
+            <ol>
+                <li><strong>Input:</strong> Send an image of a receipt, an image of an invoice, or text describing an expense to the AI.</li>
+                <li><strong>Analysis:</strong> The AI model processes the input and calls an underlying execution tool (<code>run_js</code>) with the desired extracted parameters:
+                    <ul>
+                        <li><code>vendor</code></li>
+                        <li><code>total</code></li>
+                        <li><code>date</code></li>
+                        <li><code>items</code> (List of item names, prices, and quantities)</li>
+                    </ul>
+                </li>
+                <li><strong>Execution:</strong> A script (<code>scripts/index.html</code>) intercepts this structured JSON. It initializes or accesses an existing <code>SQLite</code> table mapped to <code>IndexedDB</code> and executes a SQL <code>INSERT</code> statement with your parsed receipt data.</li>
+                <li><strong>Display:</strong> On successful entry, the tool returns the path to <code>webview.html</code>, which provides an interface to visualize or manage all previously saved expenses.</li>
             </ol>
         </section>
-    </main>
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 RestPOS Project. Open Source ภายใต้ <a href="#">MIT License</a>.</p>
-            <p>
-                <a href="https://sixmar729/restpos">GitHub Repository</a> | 
-                <a href="https://github.com/sixmar729/restpos/issues">แจ้งปัญหาการใช้งาน (Bug Report)</a>
-            </p>
-        </div>
-    </footer>
+        <section id="requirements">
+            <h2>Requirements</h2>
+            <ul>
+                <li>This skill requires the <strong>Google Edge AI</strong> application host.</li>
+                <li>Browser support for <code>IndexedDB</code> and WebAssembly to run the local SQLite database.</li>
+            </ul>
+        </section>
+
+        <section id="architecture">
+            <h2>Architecture & Layout</h2>
+            <ul class="architecture-list">
+                <li><code>SKILL.md</code> - Defines the model persona, execution parameters, and strict strictures for the JSON payload required.</li>
+                <li><code>scripts/index.html</code> - Contains the execution environment where the AI tool passes JSON. Loads <code>sql-wasm.js</code> and provides basic <code>loadFromIndexedDB</code> and <code>saveToIndexedDB</code> abstractions.</li>
+                <li><code>scripts/sql-wasm.js</code> & <code>scripts/sql-wasm.wasm</code> - The WebAssembly SQLite port.</li>
+                <li><code>assets/webview.html</code> - The interactive front-end visualizer.</li>
+            </ul>
+        </section>
+
+    </div>
 
 </body>
 </html>
-
-
-
